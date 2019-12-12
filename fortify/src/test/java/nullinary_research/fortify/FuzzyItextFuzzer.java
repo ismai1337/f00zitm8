@@ -2,7 +2,8 @@ package nullinary_research.fortify;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
+//import java.io.IOException;
+import com.itextpdf.io.IOException;
 
 import com.itextpdf.kernel.pdf.PdfDictionary;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -24,7 +25,7 @@ public class FuzzyItextFuzzer extends AbstractFuzzTarget {
 		 ByteArrayInputStream bais = new ByteArrayInputStream(data);
 	        try {
 				document = new PdfDocument(new PdfReader(bais));
-			} catch (IOException e) {
+			} catch (IOException | java.io.IOException e) {
 				// TODO Auto-generated catch block
 			//	e.printStackTrace();
 			}
